@@ -33,6 +33,14 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script>
+        Babel.registerPreset("react-classic", {
+            presets: [
+                [Babel.availablePresets["react"], { runtime: "classic" }],
+                Babel.availablePresets["env"]
+            ]
+        });
+    </script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 
@@ -82,7 +90,7 @@
 <body className="antialiased">
     <div id="root"></div>
 
-    <script type="text/babel">
+    <script type="text/babel" data-presets="react-classic">
         // ----------------------------------------------------
         // Icons
         // ----------------------------------------------------
@@ -121,7 +129,7 @@
             SCHEDULE: "https://docs.google.com/spreadsheets/d/e/2PACX-1vT6OmRPxlNhfecg0vfv-jgnWAgHk9C2NcsLwutzb64KGnisPymHTR02K6LXJBU3fuz15nq9dQTdq3uE/pub?gid=1693315274&single=true&output=csv"
         };
 
-        const APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby3B0D0XD9h1zkjHlJCKt1znhdE63X-8H8LTjf8vBms6tnrd6w4Vd9V-61BJf_FBhte/exec";
+        const APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbweHlQlgIi5-JGGOTOg5i6CgRaOLFyv8A-4HQXb9U5ld6Rhv2ioTUxfVUyyYTwg997isQ/exec";
         const FORGOT_PASSWORD_FORM_URL = "https://forms.google.com/";
 
         // ----------------------------------------------------
